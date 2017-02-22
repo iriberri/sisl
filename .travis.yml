@@ -45,7 +45,7 @@ before_install:
   - echo $PATH
   - bash miniconda.sh -b -p $HOME/miniconda
   - echo $PATH
-  - export PATH=$PATH:$HOME/miniconda/bin:
+  - export PATH=$PATH:$HOME/miniconda/bin
   - echo $PATH
   - which conda
   - hash -r
