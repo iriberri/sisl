@@ -5,18 +5,12 @@ sudo: false
 matrix:
   include:
    - python: 2.7
-   - python: 2.7
-     env: PYTHONOPTIMIZE=0
-   - python: 2.7
-     env: PYTHONOPTIMIZE=1
-   - python: 2.7
-     env: PYTHONOPTIMIZE=2
    - python: 3.5
      env: COVERAGE=true
    
 
 install:
-  - pip install coverage
+  - pip install -U coverage
   - python setup.py install
 
 script:
@@ -40,6 +34,7 @@ addons:
       - eatmydata
 
 before_install:
+  - echo $TRAVIS_PYTHON_VERSION
   - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
         wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh ;
     else
