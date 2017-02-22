@@ -10,7 +10,7 @@ matrix:
    
 
 install:
-  - pip install coverage
+  - pip install -U coverage
   - python setup.py install
 
 script:
