@@ -14,6 +14,8 @@ install:
   - python setup.py install
 
 script:
+  - ldd nosetests
+  - ldd nosetests --with-coverage --exe sisl
   - nosetests --with-coverage --exe sisl
 
 after_success:
