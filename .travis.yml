@@ -41,7 +41,7 @@ before_install:
         wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh ;
     fi
   - echo $PATH
-  - bash miniconda.sh -b -p $HOME/miniconda
+  - bash miniconda.sh -b -p 
   - echo $PATH
   - export PATH=$HOME/miniconda/bin:$PATH
   - echo $PATH
@@ -53,5 +53,5 @@ before_install:
   - conda info -a
   - echo "nose" >> requirements.txt
   - echo $PATH
-  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION --file requirements.txt
+  - conda create -q -n test-environment --file requirements.txt
   - source activate test-environment
