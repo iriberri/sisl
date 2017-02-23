@@ -8,7 +8,6 @@ matrix:
    
 script:
   - which sisl
-  - ldd sisl
   - echo $LD_RUN_PATH
   - echo $LD_LIBRARY_PATH
   - nosetests --exe sisl
@@ -38,6 +37,7 @@ install:
   - conda update -q conda
   # Useful for debugging any issues with conda
   - conda info -a
+  - conda install hdf4
   - echo "nose" >> requirements.txt
   - echo $LD_RUN_PATH
   - echo $LD_LIBRARY_PATH
