@@ -8,13 +8,11 @@ matrix:
    
 
 install:
-  - pip install -U coverage
   - python setup.py install
 
 script:
   - which nosetests
-  - which coverage
-  - nosetests --with-coverage --exe sisl
+  - nosetests --exe sisl
 
 after_success:
   - if [[ ${COVERAGE:-false} != false ]]; then bash <(curl -s https://codecov.io/bash) ; fi
