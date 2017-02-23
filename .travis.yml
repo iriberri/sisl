@@ -12,7 +12,9 @@ install:
 
 script:
   - which nosetests
-  - nosetests
+  - which sisl
+  - ldd sisl
+  - nosetests --exe sisl
 
 after_success:
   - if [[ ${COVERAGE:-false} != false ]]; then bash <(curl -s https://codecov.io/bash) ; fi
